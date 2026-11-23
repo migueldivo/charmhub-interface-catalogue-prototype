@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interfaces | Canonical Juju</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="brand" href="https://juju.is/">
+          <img src="assets/bc9e2.svg" alt="">
+          <span>Canonical Juju</span>
+        </a>
+        <div class="navigation-links">
+          <a href="https://juju.is/">How Juju Works</a>
+          <a class="active" href="https://charmhub.io/">Charmhub</a>
+          <a href="https://juju.is/community">Community <img src="assets/1c0c0.svg" alt=""></a>
+          <a href="https://documentation.ubuntu.com/juju/">Docs</a>
+          <a href="https://juju.is/blog">Blogs</a>
+        </div>
+        <div class="navigation-actions">
+          <a href="https://canonical.com/">All Canonical <img src="assets/3ed3e.svg" alt=""></a>
+          <a href="https://charmhub.io/account">Sign in <img src="assets/23f83.svg" alt=""></a>
+          <a href="https://charmhub.io/" aria-label="Search Charmhub"><img src="assets/6bdc6.svg" alt=""></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <h1>Interfaces</h1>
+          <div class="hero-copy">
+            <p>Interfaces describe the relation between two charms. This interface catalogue shows opinionated, standardized interface specifications for charm relations, outlining the exact behavior and requirements of how charms interact with one another.</p>
+            <p>To maintain stability across the ecosystem, all interfaces adhere to a strict standard of backwards compatibility. When designing an interface, follow <a href="https://documentation.ubuntu.com/charmlibs/how-to/design-relation-interfaces/">these guidelines</a> to ensure backwards compatibility.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalogue container" aria-label="Interface catalogue">
+        <div class="table-section">
+          <div class="sticky-filters">
+            <div class="filters">
+              <label class="search">
+                <span class="visually-hidden">Search interfaces</span>
+                <input id="search" type="search" placeholder="Search interfaces" autocomplete="off">
+                <img src="assets/54413.svg" alt="">
+              </label>
+              <div class="filter-group">
+                <div class="dropdown">
+                  <button id="status-button" class="dropdown-button" aria-expanded="false" aria-controls="status-menu" type="button"><span>Any status</span><img src="assets/fa087.svg" alt=""></button>
+                  <div id="status-menu" class="dropdown-menu" hidden></div>
+                </div>
+                <div class="dropdown">
+                  <button id="category-button" class="dropdown-button" aria-expanded="false" aria-controls="category-menu" type="button"><span>All categories</span><img src="assets/fa087.svg" alt=""></button>
+                  <div id="category-menu" class="dropdown-menu" hidden></div>
+                </div>
+              </div>
+            </div>
+            <div class="table-header-wrap" aria-hidden="true">
+              <table>
+                <colgroup><col class="interface-col"><col class="status-col"><col class="summary-col"><col class="categories-col"></colgroup>
+                <thead><tr><th>Interface</th><th>Status</th><th>Summary</th><th>Categories</th></tr></thead>
+              </table>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <colgroup><col class="interface-col"><col class="status-col"><col class="summary-col"><col class="categories-col"></colgroup>
+              <thead class="visually-hidden"><tr><th scope="col">Interface</th><th scope="col">Status</th><th scope="col">Summary</th><th scope="col">Categories</th></tr></thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pagination" aria-label="Pagination">
+          <div class="pagination-left">
+            <label>Items per page:
+              <select id="page-size" aria-label="Items per page"><option>10</option><option>25</option><option selected>50</option><option>100</option></select>
+            </label>
+            <span id="item-range" aria-live="polite"></span>
+          </div>
+          <div class="pagination-right">
+            <label><select id="page" aria-label="Page"></select> of <span id="page-count">1</span> pages</label>
+            <div class="pagination-buttons">
+              <button type="button" id="first" aria-label="First page"><img src="assets/b8c8a.svg" alt=""></button>
+              <button type="button" id="previous" aria-label="Previous page"><img src="assets/8227d.svg" alt=""></button>
+              <button type="button" id="next" aria-label="Next page"><img src="assets/93454.svg" alt=""></button>
+              <button type="button" id="last" aria-label="Last page"><img src="assets/0719a.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div><h2>Juju</h2><a href="https://juju.is/">What is Juju?</a><a href="https://juju.is/charms">What are Charms?</a><a href="https://juju.is/manifesto">Charm Manifesto</a><a href="https://juju.is/sdk">Charm SDK</a></div>
+        <div><h2>Charms</h2><a href="https://charmhub.io/data-platform">Data</a><a href="https://charmhub.io/kubernetes">Charmed Kubernetes</a><a href="https://charmhub.io/openstack">Charmed OpenStack</a><a class="strong" href="https://charmhub.io/">All operators ›</a></div>
+        <div><h2>Compare</h2><a href="https://juju.is/">Operators &amp; Charms</a><a href="https://juju.is/">Helm alternative</a><a href="https://juju.is/">Kustomize alternative</a><a href="https://juju.is/">Ansible alternative</a><a href="https://juju.is/">Terraform alternative</a></div>
+        <div><h2>Blog</h2><a href="https://juju.is/blog">Best Practices for creating charms</a><a href="https://juju.is/blog">Model Driven Operations Manifesto</a><a href="https://juju.is/blog">Why Helm and Kustomize Aren’t Enough: the Future of Kubernetes Apps</a><a href="https://juju.is/blog">Comparing Operators to Charms</a><a class="strong" href="https://juju.is/blog">Read all of our blogs ›</a></div>
+      </div>
+      <div class="community">
+        <h2>Join the community</h2>
+        <div class="social-links">
+          <a href="https://discourse.charmhub.io/" aria-label="Community forum"><img src="assets/49589.svg" alt=""></a>
+          <a href="https://juju.is/community" aria-label="Community"><img src="assets/46edb.svg" alt=""></a>
+          <a href="https://canonical.com/careers" aria-label="Careers"><img src="assets/9f9ce.svg" alt=""></a>
+          <a href="https://github.com/canonical" aria-label="GitHub"><img src="assets/d5592.svg" alt=""></a>
+          <a href="https://x.com/ubuntu" aria-label="X"><img src="assets/cbe8f.svg" alt=""></a>
+          <a href="https://www.youtube.com/ubuntu" aria-label="YouTube"><img src="assets/b0767.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="legal"><a href="https://ubuntu.com/legal/data-privacy">Manage your tracker settings</a><a href="https://ubuntu.com/legal">Legal Information</a></div>
+    </footer>
+  </body>
+</html>
